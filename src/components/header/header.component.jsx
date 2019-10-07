@@ -8,15 +8,15 @@ const links = ['shop',
                 'contact'
                 ]
 
-const renderLinks = links => links.map(link => (
-    <Link className='option' to={link.replace(/\s/g, "")}>{link.toUpperCase()}</Link>
+const renderLinks = links => links.map((link, idx) => (
+    <Link key={idx} className='option' to={link.replace(/\s/g, "")}>{link.toUpperCase()}</Link>
 ))
 
 const Header = ({ currentUser }) => {
     return (
         <div className='header'>
             <Link className='logo-container' to='/'>
-               <Logo classNmae='logo'/>
+               <Logo className='logo'/>
             </Link>
             <div className="options">
                 {renderLinks(links)}
